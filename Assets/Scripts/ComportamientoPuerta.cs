@@ -10,7 +10,7 @@ public class ComportamientoPuerta : MonoBehaviour
    En caso de sí tener la llave, presionar espacio para abrir la puerta
    */
 
-    bool presionaEspacio = false;
+    bool clicIzquierdo = false;
     public ComportamientoCofre compCofre;
 
     // Variables para los mensajes que hice y poder interactuar con el entorno
@@ -29,16 +29,17 @@ public class ComportamientoPuerta : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonDown("Jump") && presionaEspacio) 
+        if (Input.GetButtonDown("Fire1") && clicIzquierdo) 
         {
             if(compCofre.contarConLlave == true) 
             {
-                compCofre.iconoLlave.enabled = false;
+                //compCofre.iconoLlave.enabled = false;
                 mensajePuerta.enabled = false;
                 if(animacion != null) 
                 {
                     animacion.Play("PuertaAbriendo");
                 }
+       
             }
             if(compCofre.contarConLlave == false) 
             {
@@ -53,7 +54,7 @@ public class ComportamientoPuerta : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             mensajePuerta.enabled = true;
-            presionaEspacio = true;
+            clicIzquierdo = true;
         }
     }
 
@@ -62,7 +63,7 @@ public class ComportamientoPuerta : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             mensajePuerta.enabled = false;
-            presionaEspacio = false;
+            clicIzquierdo = false;
             mensajeNecesitasLlave.enabled = false;
         }
     }

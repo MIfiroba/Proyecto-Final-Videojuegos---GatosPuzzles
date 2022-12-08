@@ -11,7 +11,7 @@ public class ComportamientoPrimerLibro : MonoBehaviour
     */
 
     //Variable para el funcionamiento del libro
-    public bool presionaEspacio = false;
+    public bool clicIzquierdo = false;
 
     // Variables para los mensajes que hice y poder interactuar con el entorno
     public Image mensajeLibro;
@@ -25,7 +25,7 @@ public class ComportamientoPrimerLibro : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetButtonDown("Jump") && presionaEspacio)
+        if (Input.GetButtonDown("Fire1") && clicIzquierdo)
         {
             mensajeLibro.enabled = false;
             ayudaLibro.enabled = true;
@@ -37,7 +37,7 @@ public class ComportamientoPrimerLibro : MonoBehaviour
         if (other.CompareTag("Player") )
         {
             mensajeLibro.enabled = true;
-            presionaEspacio = true;
+            clicIzquierdo = true;
         }
     }
 
@@ -46,7 +46,8 @@ public class ComportamientoPrimerLibro : MonoBehaviour
         if (other.CompareTag("Player") )
         {
             mensajeLibro.enabled = false;
-            presionaEspacio = false;
+            clicIzquierdo = false;
+            ayudaLibro.enabled = false;
         }
     }
 }

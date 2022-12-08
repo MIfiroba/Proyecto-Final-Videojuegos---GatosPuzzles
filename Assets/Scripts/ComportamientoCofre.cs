@@ -12,7 +12,7 @@ public class ComportamientoCofre : MonoBehaviour
 
     //Variables necesarias para el funcionamiento del cofre
     public bool contarConLlave = false;
-    public bool presionaEspacio = false;
+    public bool clicIzquierdo = false;
 
     // Variables para los mensajes que hice y poder interactuar con el entorno
     public Image mensajeCofre;
@@ -26,7 +26,7 @@ public class ComportamientoCofre : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetButtonDown("Jump") && presionaEspacio) 
+        if (Input.GetButtonDown("Fire1") && clicIzquierdo) 
         {
             contarConLlave = true;
             iconoLlave.enabled = true;
@@ -39,7 +39,7 @@ public class ComportamientoCofre : MonoBehaviour
         if (other.CompareTag("Player") && contarConLlave == false)
         {
             mensajeCofre.enabled = true;
-            presionaEspacio = true;
+            clicIzquierdo = true;
         }
     }
 
@@ -48,7 +48,7 @@ public class ComportamientoCofre : MonoBehaviour
         if (other.CompareTag("Player") && contarConLlave == false) 
         {
             mensajeCofre.enabled = false;
-            presionaEspacio = false;
+            clicIzquierdo = false;
         }
     }
 }

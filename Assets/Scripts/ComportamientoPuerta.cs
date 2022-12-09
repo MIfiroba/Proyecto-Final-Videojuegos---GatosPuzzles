@@ -33,7 +33,6 @@ public class ComportamientoPuerta : MonoBehaviour
         {
             if(compCofre.contarConLlave == true) 
             {
-                //compCofre.iconoLlave.enabled = false;
                 mensajePuerta.enabled = false;
                 if(animacion != null) 
                 {

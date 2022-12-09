@@ -11,6 +11,9 @@ public class MenuInventario : MonoBehaviour
     [SerializeField] private GameObject botonInventario;
     [SerializeField] private GameObject menuInventario;
 
+    [SerializeField] private GameObject botonPanelNumerico;
+    [SerializeField] private GameObject menuPanel;
+
     public void abreInventario() 
     {
         Time.timeScale = 0f;
@@ -23,5 +26,15 @@ public class MenuInventario : MonoBehaviour
         Time.timeScale = 1f;
         botonInventario.SetActive(true);
         menuInventario.SetActive(false);
+    }
+
+    public void abrePanelNumerico() 
+    {
+        menuPanel.SetActive(true);
+    }
+
+    public void cierraPanelNumerico() 
+    {
+        menuPanel.SetActive(false);
     }
 }

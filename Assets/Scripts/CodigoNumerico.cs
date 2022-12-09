@@ -24,6 +24,7 @@ public class CodigoNumerico : MonoBehaviour
         if(Numero == Codigo) 
         {
             //AbrirPuerta
+            Debug.Log("Abriste la puerta!");
         }
     }
 

@@ -11,6 +11,7 @@ public class CodigoNumerico : MonoBehaviour
     int IndiceNumero = 0;
     string st;
     public Text UiText = null;
+    public bool puertaAbierta = false;
 
     public void CodigoFuncion(string digitos) 
     {
@@ -24,6 +25,7 @@ public class CodigoNumerico : MonoBehaviour
         if(Numero == Codigo) 
         {
             //AbrirPuerta
+            puertaAbierta = true; 
             Debug.Log("Abriste la puerta!");
         }
     }

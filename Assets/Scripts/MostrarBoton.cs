@@ -12,10 +12,12 @@ public class MostrarBoton: MonoBehaviour
 
     // Variables para los mensajes que hice y poder interactuar con el entorno
     public Button botonPanel;
+    public Image manita;
 
     void Start()
     {
         botonPanel.enabled = false;
+        manita.enabled = false;
     }
 
     private void OnTriggerEnter(Collider other)
@@ -23,6 +25,8 @@ public class MostrarBoton: MonoBehaviour
         if (other.CompareTag("Player"))
         {
             botonPanel.enabled = true;
+            manita.enabled = true;
+
         }
     }
 
@@ -31,6 +35,7 @@ public class MostrarBoton: MonoBehaviour
         if (other.CompareTag("Player"))
         {
             botonPanel.enabled = false;
+            manita.enabled = false;
         }
     }
 }

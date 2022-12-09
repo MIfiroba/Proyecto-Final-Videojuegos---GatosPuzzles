@@ -5,16 +5,17 @@ using UnityEngine.UI;
 
 public class ComportamientoPuertaPasillo : MonoBehaviour
 {
-    // Si el gato llega a la puerta se activa mensaje para ingresar codigo
-
     public Animator animacion;
+    public CodigoNumerico codNum;
 
     void Update()
     {
-
-        if (animacion != null)
+        if (codNum.puertaAbierta == true) 
         {
-            animacion.Play("PuertaAbriendo");
+            if (animacion != null)
+            {
+                animacion.Play("PuertaAbriendo");
+            }
         }
     }
 }

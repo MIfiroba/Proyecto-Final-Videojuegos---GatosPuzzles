@@ -13,6 +13,8 @@ public class ComportamientoPuerta : MonoBehaviour
     bool clicIzquierdo = false;
     public ComportamientoCofre compCofre;
 
+    private ControladorAudios controladorAudio;
+
     // Variables para los mensajes que hice y poder interactuar con el entorno
     public Image mensajePuerta;
     public Image iconoLlave;
@@ -22,6 +24,7 @@ public class ComportamientoPuerta : MonoBehaviour
 
     void Start()
     {
+        controladorAudio = FindObjectOfType<ControladorAudios>();
         mensajePuerta.enabled = false;
         mensajeNecesitasLlave.enabled = false;
     }
@@ -37,6 +40,7 @@ public class ComportamientoPuerta : MonoBehaviour
                 if(animacion != null) 
                 {
                     animacion.Play("PuertaAbriendo");
+                    controladorAudio.SeleccionAudio(2, 1f);
                 }
        
             }

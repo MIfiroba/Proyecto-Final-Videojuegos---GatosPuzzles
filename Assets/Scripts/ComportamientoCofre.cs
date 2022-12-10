@@ -13,13 +13,17 @@ public class ComportamientoCofre : MonoBehaviour
     //Variables necesarias para el funcionamiento del cofre
     public bool contarConLlave = false;
     public bool clicIzquierdo = false;
+    //public bool obtuvisteItem = false;
 
     // Variables para los mensajes que hice y poder interactuar con el entorno
     public Image mensajeCofre;
     public Image iconoLlave;
 
+    private ControladorAudios controladorAudio;
+
     void Start()
     {
+        controladorAudio = FindObjectOfType<ControladorAudios>();
         mensajeCofre.enabled = false;
         iconoLlave.enabled = false;
     }

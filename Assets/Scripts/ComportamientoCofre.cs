@@ -13,7 +13,6 @@ public class ComportamientoCofre : MonoBehaviour
     //Variables necesarias para el funcionamiento del cofre
     public bool contarConLlave = false;
     public bool clicIzquierdo = false;
-    //public bool obtuvisteItem = false;
 
     // Variables para los mensajes que hice y poder interactuar con el entorno
     public Image mensajeCofre;

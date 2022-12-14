@@ -42,7 +42,7 @@ public class ComportamientoPuerta : MonoBehaviour
                     animacion.Play("PuertaAbriendo");
                     controladorAudio.SeleccionAudio(2, 1f);
                 }
-       
+                clicIzquierdo = false;
             }
             if(compCofre.contarConLlave == false) 
             {
@@ -54,7 +54,7 @@ public class ComportamientoPuerta : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player") )
         {
             mensajePuerta.enabled = true;
             clicIzquierdo = true;

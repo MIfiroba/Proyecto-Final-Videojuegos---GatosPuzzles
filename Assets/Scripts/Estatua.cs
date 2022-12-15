@@ -11,13 +11,14 @@ public class Estatua : MonoBehaviour
    */
 
     bool clicIzquierdo = false;
+    public bool contarConLlaveBanio = false;
     public ComportamientoCaja compCaja;
 
     private ControladorAudios controladorAudio;
 
     // Variables para los mensajes que hice y poder interactuar con el entorno
     public Image mensajeEstatua;
-    public Image iconoMartillo;
+    public Image iconoLlaveBanio;
     public Image mensajeNecesitasMartillo;
 
     //public Animator animacion;
@@ -28,6 +29,7 @@ public class Estatua : MonoBehaviour
         controladorAudio = FindObjectOfType<ControladorAudios>();
         mensajeEstatua.enabled = false;
         mensajeNecesitasMartillo.enabled = false;
+        iconoLlaveBanio.enabled = false;
     }
 
     // Update is called once per frame
@@ -40,6 +42,11 @@ public class Estatua : MonoBehaviour
                 mensajeEstatua.enabled = false;
                 controladorAudio.SeleccionAudio(7, 1f);
                 romperObjeto.SetActive(false);
+                controladorAudio.SeleccionAudio(3, 1f);
+                contarConLlaveBanio = true;
+                iconoLlaveBanio.enabled = true;
+                Debug.Log("Obtuviste llave de baño");
+
             }
             if (compCaja.contarConMartillo == false)
             {

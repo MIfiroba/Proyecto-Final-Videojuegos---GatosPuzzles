@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class MostrarBoton: MonoBehaviour
+public class MostrarBoton : MonoBehaviour
 {
     /* Si el gato se acerca lo suficiente al papel
     entonces se mostrará el mensaje de ayuda

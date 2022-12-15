@@ -10,6 +10,7 @@ public class MenuInventario : MonoBehaviour
 
     [SerializeField] private GameObject botonInventario;
     [SerializeField] private GameObject menuInventario;
+    [SerializeField] private GameObject imagenMaishaExpandido;
 
     [SerializeField] private GameObject botonPanelNumerico;
     [SerializeField] private GameObject menuPanel;
@@ -36,5 +37,15 @@ public class MenuInventario : MonoBehaviour
     public void cierraPanelNumerico() 
     {
         menuPanel.SetActive(false);
+    }
+
+    public void abreImagenMaisha() 
+    {
+        imagenMaishaExpandido.SetActive(true);
+    }
+
+    public void cierraImagenMaisha() 
+    {
+        imagenMaishaExpandido.SetActive(false);
     }
 }

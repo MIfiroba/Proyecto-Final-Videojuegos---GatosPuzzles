@@ -17,13 +17,17 @@ public class ComportamientoPerro : MonoBehaviour
     public Image mensajeReflexivo;
 
     public Image mensajeInteraccion;
+    public GameObject recompensaMaisha;
 
     public bool tieneHambre = true;
     public bool estaExigente = false;
-    public bool agradecimiento = false;
+    public bool estaAgradecido = false;
     public bool estaReflexivo = false;
 
     public bool clicIzquierdo = false;
+
+    public ComportamientoRefri compRefri;
+    public ComportamientoEstufa compEstufa;
 
     void Start()
     {
@@ -32,15 +36,32 @@ public class ComportamientoPerro : MonoBehaviour
         mensajeReflexivo.enabled = false;
         mensajeAgradecimiento.enabled = false;
         mensajeInteraccion.enabled = false;
+        recompensaMaisha.SetActive(false);
     }
 
     void Update()
     {
-        if (Input.GetButtonDown("Fire1") && clicIzquierdo && tieneHambre)
+        if (Input.GetButtonDown("Fire1") && clicIzquierdo)
         {
             mensajeInteraccion.enabled = false;
-            mensajeTieneHambre.enabled = true;
-            //mensajeExigente.enabled = true;
+
+            // A partir de aqui se van revisando las diferentes situaciones de interaccion con el canino
+            if(tieneHambre == true)
+            {
+                mensajeTieneHambre.enabled = true;
+            }
+            if (tieneHambre == true && compRefri.contarConCarne == true) 
+            {
+                mensajeExigente.enabled = true;
+                estaExigente = true;
+            }
+            if (tieneHambre == true && compEstufa.contarConCarneCocida == true)
+            {
+                mensajeAgradecimiento.enabled = true;
+                estaExigente = false;
+                estaReflexivo = true;
+                recompensaMaisha.SetActive(true);
+            }
         }
     }
 
@@ -50,6 +71,12 @@ public class ComportamientoPerro : MonoBehaviour
         {
             mensajeInteraccion.enabled = true;
             clicIzquierdo = true;
+        }
+        if(other.CompareTag("Player") && estaReflexivo == true) 
+        {
+            mensajeReflexivo.enabled = true;
+            mensajeInteraccion.enabled = false;
+            clicIzquierdo = false;
         }
     }
 

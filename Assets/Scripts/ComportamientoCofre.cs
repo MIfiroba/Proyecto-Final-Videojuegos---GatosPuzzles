@@ -7,7 +7,7 @@ public class ComportamientoCofre : MonoBehaviour
 {
     /* Si el gato llega al cofre y NO tiene llave
     entonces se mostrará el mensaje de abrir cofre.
-    En caso de sí tener la llave, presionar espacio para abrir el cofre
+    En caso de sí tener la llave, abrir el cofre
     */
 
     //Variables necesarias para el funcionamiento del cofre

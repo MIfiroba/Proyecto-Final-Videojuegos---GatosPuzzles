@@ -8,6 +8,10 @@ public class ComportamientoPuertaPasillo : MonoBehaviour
     public Animator animacion;
     public CodigoNumerico codNum;
 
+    private ControladorAudios controladorAudio;
+
+    void Start() { controladorAudio = FindObjectOfType<ControladorAudios>();}
+
     void Update()
     {
         if (codNum.puertaAbierta == true) 
@@ -16,6 +20,7 @@ public class ComportamientoPuertaPasillo : MonoBehaviour
             {
                 animacion.Play("PuertaAbriendo");
             }
+            //controladorAudio.SeleccionAudio(6, 1f);
         }
     }
 }

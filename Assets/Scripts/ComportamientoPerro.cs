@@ -29,8 +29,11 @@ public class ComportamientoPerro : MonoBehaviour
     public ComportamientoRefri compRefri;
     public ComportamientoEstufa compEstufa;
 
+    private ControladorAudios controladorAudio;
+
     void Start()
     {
+        controladorAudio = FindObjectOfType<ControladorAudios>();
         mensajeTieneHambre.enabled = false;
         mensajeExigente.enabled = false;
         mensajeReflexivo.enabled = false;
@@ -71,6 +74,8 @@ public class ComportamientoPerro : MonoBehaviour
         {
             mensajeInteraccion.enabled = true;
             clicIzquierdo = true;
+            controladorAudio.SeleccionAudio(8, 1f);
+            
         }
         if(other.CompareTag("Player") && estaReflexivo == true) 
         {

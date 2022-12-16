@@ -33,6 +33,7 @@ public class ComportamientoCaja : MonoBehaviour
             contarConMartillo = true;
             iconoMartillo.enabled = true;
             mensajeCaja.enabled = false;
+            //controladorAudio.SeleccionAudio(3, 1f);
         }
     }
 

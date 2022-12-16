@@ -34,7 +34,7 @@ public class CodigoNumericoHabitacion : MonoBehaviour
             //AbrirPuerta
             puertaAbierta = true;
             //controladorAudio.SeleccionAudio(6, 1f);
-            Debug.Log("Abriste la puerta!");
+            Debug.Log("Abriste la puerta de la habitacion!");
         }
     }
 

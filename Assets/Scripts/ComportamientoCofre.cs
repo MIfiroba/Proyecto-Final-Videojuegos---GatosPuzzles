@@ -34,6 +34,7 @@ public class ComportamientoCofre : MonoBehaviour
             contarConLlave = true;
             iconoLlave.enabled = true;
             mensajeCofre.enabled = false;
+           // controladorAudio.SeleccionAudio(3, 1f);
         }
     }
 

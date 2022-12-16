@@ -14,6 +14,17 @@ public class MenuInventario : MonoBehaviour
 
     [SerializeField] private GameObject botonPanelNumerico;
     [SerializeField] private GameObject menuPanel;
+    [SerializeField] private GameObject menuPanelHabitacion;
+    [SerializeField] private GameObject menuPanelJaula;
+
+    [SerializeField] private GameObject ventanaGanar;
+
+    private ControladorAudios controladorAudio;
+
+    void start()
+    {
+        controladorAudio = FindObjectOfType<ControladorAudios>();
+    }
 
     public void abreInventario() 
     {
@@ -34,9 +45,29 @@ public class MenuInventario : MonoBehaviour
         menuPanel.SetActive(true);
     }
 
+    public void abrePanelNumericoHabiatacion()
+    {
+        menuPanelHabitacion.SetActive(true);
+    }
+
+    public void abrePanelJaula() 
+    {
+        menuPanelJaula.SetActive(true);
+    }
+
+    public void cierraPanelJaula()
+    {
+        menuPanelJaula.SetActive(false);
+    }
+
     public void cierraPanelNumerico() 
     {
         menuPanel.SetActive(false);
+    }
+
+    public void cierraPanelNumericoHabitacion() 
+    {
+        menuPanelHabitacion.SetActive(false);
     }
 
     public void abreImagenMaisha() 

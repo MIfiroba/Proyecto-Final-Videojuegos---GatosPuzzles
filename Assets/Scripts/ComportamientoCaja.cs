@@ -33,7 +33,7 @@ public class ComportamientoCaja : MonoBehaviour
             contarConMartillo = true;
             iconoMartillo.enabled = true;
             mensajeCaja.enabled = false;
-            //controladorAudio.SeleccionAudio(3, 1f);
+            controladorAudio.SeleccionAudio(3, 1f);
         }
     }
 
@@ -49,6 +49,11 @@ public class ComportamientoCaja : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("Player") && contarConMartillo == false)
+        {
+            mensajeCaja.enabled = false;
+            clicIzquierdo = false;
+        }
+        if (other.CompareTag("Player") && contarConMartillo == true)
         {
             mensajeCaja.enabled = false;
             clicIzquierdo = false;

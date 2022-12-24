@@ -33,7 +33,7 @@ public class Mueble : MonoBehaviour
             contarConControl = true;
             iconoControl.enabled = true;
             mensajeMueble.enabled = false;
-            // controladorAudio.SeleccionAudio(3, 1f);
+            controladorAudio.SeleccionAudio(3, 1f);
         }
     }
 
@@ -49,6 +49,11 @@ public class Mueble : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("Player") && contarConControl == false)
+        {
+            mensajeMueble.enabled = false;
+            clicIzquierdo = false;
+        }
+        if (other.CompareTag("Player") && contarConControl == true)
         {
             mensajeMueble.enabled = false;
             clicIzquierdo = false;

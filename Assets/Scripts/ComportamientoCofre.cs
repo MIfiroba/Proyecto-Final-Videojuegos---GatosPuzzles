@@ -34,7 +34,7 @@ public class ComportamientoCofre : MonoBehaviour
             contarConLlave = true;
             iconoLlave.enabled = true;
             mensajeCofre.enabled = false;
-           // controladorAudio.SeleccionAudio(3, 1f);
+            controladorAudio.SeleccionAudio(3, 1f);
         }
     }
 
@@ -50,6 +50,11 @@ public class ComportamientoCofre : MonoBehaviour
     private void OnTriggerExit(Collider other) 
     {
         if (other.CompareTag("Player") && contarConLlave == false) 
+        {
+            mensajeCofre.enabled = false;
+            clicIzquierdo = false;
+        }
+        if (other.CompareTag("Player") && contarConLlave == true)
         {
             mensajeCofre.enabled = false;
             clicIzquierdo = false;

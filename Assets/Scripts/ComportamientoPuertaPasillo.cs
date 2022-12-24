@@ -19,8 +19,8 @@ public class ComportamientoPuertaPasillo : MonoBehaviour
             if (animacion != null)
             {
                 animacion.Play("PuertaAbriendo");
+                //controladorAudio.SeleccionAudio(6, 1f);
             }
-            //controladorAudio.SeleccionAudio(6, 1f);
         }
     }
 }
